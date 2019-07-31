@@ -1,2 +1,6 @@
 <!--components/v-like/index.wxml-->
-<text>components/v-like/index.wxml</text>
+<view class="container">
+ <image src="images/like.png"></image>
+ <text>9</text>
+</view>
+

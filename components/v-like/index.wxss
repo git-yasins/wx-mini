@@ -1,1 +1,4 @@
 /* components/v-like/index.wxss */
+.container{display: inline-flex;}
+.container image{width:32rpx;height:28rpx;}
+.container text{font-family: "pingfang";font-size: 24rpx;}
