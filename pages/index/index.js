@@ -1,10 +1,12 @@
 //index.js
 //获取应用实例
+import { http } from '../../utils/http.js'
 const app = getApp()
+let _http = new http();
 
 Page({
   data: {
-    motto: 'Hello World2222',
+    motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
@@ -16,6 +18,14 @@ Page({
     })
   },
   onLoad: function () {
+
+    _http.request({
+      url: "classic/latest",
+      success:(data)=>{
+       console.log(data);
+      }
+    })
+
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
