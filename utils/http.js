@@ -1,5 +1,9 @@
 import {config} from '../config.js'
-
+const tips = {
+  1:'出错了',
+  1005:'appkey无效',
+  3000:'期刊不存在'
+}
 class http{
    request(param){
      if(!param.method){
@@ -15,15 +19,28 @@ class http{
         success:(res)=>{
             let code = res.statusCode;
             if(code.toString().startsWith('2')){
-              param.success(res);
+              param.success &&  param.success(res.data);
             }else{
-              
+              let erro_code = res.data.erro_code
+              _show_error(erro_code)
             }
           
         },fail:(err)=>{
-           
+          _show_error(1)
         }
       });
+   }
+
+   _show_error(err_code){
+           if(!err_code){
+             err_code=1
+           }
+     const tip = tips[err_code]
+           wx.showToast({
+             title: tip ? tip:tip[1],
+             icon:'none',
+             duration:2000
+           })
    }
 }
 

@@ -1,0 +1,1 @@
+<v-like bind:like="onlike"/>
