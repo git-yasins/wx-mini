@@ -1,1 +1,2 @@
-<v-like bind:like="onlike"/>
+<v-like bind:like="onlike" count="{{classicData.fav_nums}}"/>
+<v-movie content="{{classicData.content}}" image="{{classicData.image}}"/>
