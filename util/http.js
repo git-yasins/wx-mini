@@ -14,6 +14,7 @@ class http {
     wx.request({
       url: config.baseUrl + param.url,
       method: param.method,
+      data:param.data,
       header: {
         'content-type': "application/json",
         'appkey': config.appkey
@@ -24,12 +25,12 @@ class http {
           param.success && param.success(res.data);
         } else {
           let erro_code = res.data.erro_code
-          _show_error(erro_code)
+          this._show_error(erro_code)
         }
 
       },
       fail: (err) => {
-        _show_error(1)
+        this._show_error(1)
       }
     });
   }
