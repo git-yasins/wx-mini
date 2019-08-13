@@ -1,9 +1,10 @@
-<view class="container1">
- <view class="header">
-    <v-episode class="episode" index="{{index}}"/>
+<view class="container">
+  <view class="header">
+    <v-episode class="episode" index="{{index}}" />
     <v-like class="like" bind:like="onlike" count="{{likeCount}}" like="{{likeStatus}}" />
-    </view>
-    <view>
+  </view>
+  <view>
     <v-movie content="{{classicData.content}}" image="{{classicData.image}}" />
-    </view>
+  </view>
+    <v-navi class="navi" bind:next="onNext" bind:previous="onPrevious" first="{{first}}" latest="{{latest}}" title="{{classicData.title}}" />
 </view>

@@ -9,7 +9,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    first:false,
+    latest:true,
+    title:""
   },
 
   /**
@@ -22,7 +24,7 @@ Page({
         classicData: res,
         likeCount: res.fav_nums,
         likeStatus: res.like_status,
-        index:res.id
+        index:res.index
       });
     });
   },
@@ -46,6 +48,18 @@ Page({
         });
       }
     );
+  },
+
+  onPrevious:function(){
+    wx.showToast({
+      title: 'previous',
+    })
+  },
+  
+  onNext:function(){
+    wx.showToast({
+      title: 'next',
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

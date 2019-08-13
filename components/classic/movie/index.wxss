@@ -12,7 +12,7 @@
   width: 46rpx;
   height: 142rpx;
   position:relative;
-  right:220rpx;
+  right:280rpx;
   bottom: 60rpx;
 }
 .container text {
