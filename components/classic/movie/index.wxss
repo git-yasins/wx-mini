@@ -4,6 +4,10 @@
   flex-direction: column;
   align-items: center;
 }
+.classic-img {
+    width: 750rpx;
+    height: 500rpx;
+  }
 .container-image {
   width: 46rpx;
   height: 142rpx;

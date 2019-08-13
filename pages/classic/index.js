@@ -9,7 +9,7 @@ Page({
    * 页面的初始数据
    */
   data: {
- 
+
   },
 
   /**
@@ -21,7 +21,8 @@ Page({
       this.setData({
         classicData: res,
         likeCount: res.fav_nums,
-        likeStatus: res.like_status
+        likeStatus: res.like_status,
+        index:res.id
       });
     });
   },
