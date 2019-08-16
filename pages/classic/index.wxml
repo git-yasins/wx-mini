@@ -1,6 +1,6 @@
 <view class="container">
   <view class="header">
-    <v-episode class="episode" index="{{index}}" />
+    <v-episode class="episode" index="{{classicData.index}}" />
     <v-like class="like" bind:like="onlike" count="{{likeCount}}" like="{{likeStatus}}" />
   </view>
   <view>

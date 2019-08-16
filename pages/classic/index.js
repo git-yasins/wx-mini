@@ -1,6 +1,10 @@
 // pages/classic/index.js
-import { likeModel } from "../../models/like.js";
-import { classicModel } from "../../models/classic.js";
+import {
+  likeModel
+} from "../../models/like.js";
+import {
+  classicModel
+} from "../../models/classic.js";
 let _likeModel = new likeModel();
 let _classicModel = new classicModel();
 
@@ -9,9 +13,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-    first:false,
-    latest:true,
-    title:""
+    first: true,
+    latest: true,
+    title: "",
+    classicData: null,
+    like_status: false
   },
 
   /**
@@ -24,7 +30,7 @@ Page({
         classicData: res,
         likeCount: res.fav_nums,
         likeStatus: res.like_status,
-        index:res.index
+        index: res.index
       });
     });
   },
@@ -50,15 +56,31 @@ Page({
     );
   },
 
-  onPrevious:function(){
-    wx.showToast({
-      title: 'previous',
+  onPrevious: function() {
+    let _index = this.data.classicData.index;
+    if (_index == 2) {
+      this.setData({
+        latest: true,
+        first: true
+      });
+    }
+    _classicModel.getPrevious(_index, (data) => {
+      this.setData({
+        classicData: data
+      });
+      console.log(data);
     })
   },
-  
-  onNext:function(){
-    wx.showToast({
-      title: 'next',
+
+  onNext: function() {
+    let _index = parseInt(this.data.classicData.index)+2;
+    _classicModel.getPrevious(_index, (data) => {
+      this.setData({
+        classicData:data,
+        latest: true,
+        first:true
+      });
+      console.log(data,_index);
     })
   },
   /**

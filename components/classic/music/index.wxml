@@ -1,0 +1,6 @@
+<!--components/classic/music/index.wxml-->
+<view>
+ <image src="{{corver}}"/>
+ <image src="{{pause}}"/>
+ <image src="{{music}}"/>
+</view>
